@@ -65,12 +65,10 @@ void quick_sort(vector<Data> &v, int s, int e){
         while(v[first]<=pivot&&first<=e){
             first++;
             if(first>e) break;
-            if(first>SIZE-1) cout<<"s "<<s<<" e "<<e<<" first "<<first<<" first>e "<<v[first].a<<"why ok?\n";
         }
         while(v[second]>=pivot&&second>=s+1){        
             second--;
             if(second<s+1) break;
-            if(second<0) cout<<"second 0 out\n";
         }
         if(first<=second){
             vector_swap(v,first,second);
