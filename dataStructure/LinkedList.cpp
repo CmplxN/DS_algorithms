@@ -85,12 +85,10 @@ LinkedList* initList(){//리스트 시작(노드 하나도 생성)
 }
 bool destroyList(LinkedList **LL){//리스트 전부 삭제 헤드의 prev를 하나씩 지워버림
     while((*LL)->size!=0){
-        //std::cout<<" erase "<<LL->head->prev->data.data<<'\n';
         eraseNode(*LL,(*LL)->head->prev);
     }
     free(*LL);
     *LL=NULL;
-    //if(LL==NULL) std::cout<<"free LL\n";
     return true;
 }
 void printList(LinkedList *LL){
@@ -113,9 +111,13 @@ int main(){
         insertNode(LL,LL->head,test);
     }
     printList(LL);
+    std::cout<<'\n';
+    eraseNode(LL,LL->head->next->next->next);
+    printList(LL);
+    std::cout<<'\n';
     destroyList(&LL);
     if(LL==NULL) std::cout<<"NULL";
-    //else printList(LL);
+    else printList(LL);
     
     return 0;
 }
