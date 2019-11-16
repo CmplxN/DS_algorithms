@@ -4,7 +4,7 @@
 */
 #include <iostream>
 #include <vector>
-#define SIZE 19
+#define SIZE 15
 #define RANDOMIZER 111
 using namespace std;
 int randomizer;
@@ -61,31 +61,21 @@ void quick_sort(vector<Data> &v, int s, int e){
     Data pivot=v[s];
     int first=s+1;
     int second=e;
-    //cout<<" pivot "<<pivot.a<<' ';
     while(first<=second){
         while(v[first]<=pivot&&first<=e){
             first++;
-            //if(first>SIZE-1) cout<<"first "<<first<<" first>e "<<v[first].a<<"why ok?\n";
-            //if(first<=SIZE-1) first++;
-            //else break;
+            if(first>e) break;
+            if(first>SIZE-1) cout<<"s "<<s<<" e "<<e<<" first "<<first<<" first>e "<<v[first].a<<"why ok?\n";
         }
-        //cout<<"\nv[first] "<<v[first].a;
-        while(v[second]>=pivot&&second>=s+1){
-            //if(second>=0) second--;
-            //else break;
+        while(v[second]>=pivot&&second>=s+1){        
             second--;
-            //if(second<0) cout<<"second<s\n";
+            if(second<s+1) break;
+            if(second<0) cout<<"second 0 out\n";
         }
-        //cout<<"\nv[second] "<<v[second].a;
-        //cout<<first<<' '<<second<<'\n';
         if(first<=second){
             vector_swap(v,first,second);
         }
     }
-    //cout<<'\n';
-    //cout<<'\n'<<pivot.a<<'\n';
-    //for(int i=s;i<=e;++i) cout<<v[i].a<<' ';
-    //cout<<"\n\n";
     if(s<e){
         vector_swap(v,s,second);
         quick_sort(v,s,second-1);
@@ -97,8 +87,8 @@ int main(){
     vector<Data> v;
     Data temp;
     for(int i=0 ; i<SIZE; ++i){
-        temp.a=SIZE-i;
-        v.push_back({(SIZE+i*i*i)%SIZE});
+        temp.a=(i*i+SIZE*SIZE)%SIZE;
+        v.push_back(temp);
     }
     for(int i=0;i<v.size();++i){
         cout<<v[i].a<<' ';
