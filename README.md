@@ -9,3 +9,4 @@
 20 NOV 2019 오픈채팅방.cpp : programmers solution.
 22 NOV 2019 후보키.cpp : programmers solution.
 23 NOV 2019 LinkedList_T.cpp : single linkedlist using template and class.
+23 NOV 2019 실패율.cpp : programmers solution.
