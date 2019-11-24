@@ -138,10 +138,16 @@ class List{
     int get_size(){
       return size;
     }
+    void list_concat(List<T> *l){
+      tail->next=l->head;
+      tail=l->tail;
+      delete l;
+    }
 };
 int main() {
-  List<int> lst;
+  List<int> lst,lst1;
   for(int i = 0 ; i < 10 ; ++i) lst.push_back(i);
+  for(int i = 0 ; i < 10 ; ++i) lst1.push_back(100-i);
   lst.print();
   lst.pop_back();
   lst.pop_front();
@@ -150,5 +156,9 @@ int main() {
   lst.push_back(111);
   lst.push_front(-1);
   lst.print();
+  lst1.print();
+  lst.list_concat(&lst1);
+  lst.print();
+  lst1.print();
   return 0;
 }

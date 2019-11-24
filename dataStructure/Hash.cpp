@@ -4,6 +4,7 @@ Hash with chaining and linked list
 #include <iostream>
 #include <list>
 #include <string>
+#include <string.h>
 #define MAX 11
 #define PRIME 29
 using namespace std;
@@ -70,6 +71,7 @@ int main(){
             cout<<"key : "<<key<<" name : "<<it->name<<" score : "<<it->score<<'\n';
         }
     }
+    cout<<endl;
     for(int i=5;i<10;++i) remove(input[i]);
     temp.name="이정태";
     temp.score=100;
@@ -79,6 +81,5 @@ int main(){
             cout<<"key : "<<key<<" name : "<<it->name<<" score : "<<it->score<<'\n';
         }
     }
-    
     return 0;
 }
