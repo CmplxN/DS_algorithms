@@ -10,3 +10,4 @@
 22 NOV 2019 후보키.cpp : programmers solution.
 23 NOV 2019 LinkedList_T.cpp : single linkedlist using template and class.
 23 NOV 2019 실패율.cpp : programmers solution.
+24 NOV 2019 UnionFind.cpp : unionfind.
