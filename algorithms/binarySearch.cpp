@@ -44,6 +44,7 @@ Data *lowerBound(vector<Data> v, Data target){
             right=mid;
         }
     }
+    cout<<"lowerbound right : "<<right<<"\n";
     return &v[right];
 }
 Data *upperBound(vector<Data> v, Data target){
@@ -58,15 +59,16 @@ Data *upperBound(vector<Data> v, Data target){
             left=mid+1;
         }
     }
+    cout<<"\nupperbound right : "<<right<<"\n";
     return &v[right];
 }
 int main(){
     vector<Data> v;
     Data t;
-    Data d[11]={{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{100}};
+    Data d[10]={{2},{2},{3},{6},{6},{6},{7},{9},{9},{10}};
     cin>>t.data;
-    for(int i=0;i<11;++i) v.push_back(d[i]);
-    for(int i=0;i<11;++i) cout<<v[i].data<<' ';
+    for(int i=0;i<10;++i) v.push_back(d[i]);
+    for(int i=0;i<10;++i) cout<<v[i].data<<' ';
     cout<<endl;
     if(binarySearch(v,t)!=NULL){
         cout<<"Bst : "<<binarySearch(v,t)->data;

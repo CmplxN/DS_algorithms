@@ -4,7 +4,7 @@
 */
 #include <iostream>
 #include <vector>
-#define SIZE 10
+#define SIZE 11
 using namespace std;
 typedef struct Data{
     int a;
