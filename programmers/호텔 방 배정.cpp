@@ -72,7 +72,7 @@ vector<long long> solution(long long k, vector<long long> room_number) {
                 mp[room].next=mp[nRoom].next;
                 mp[nRoom].anc=room;
             }
-            else{/
+            else{
                 mp[room].next=myRoom+1;
             }
             answer.push_back(myRoom);
