@@ -30,7 +30,7 @@ fun main()=with(BufferedReader(InputStreamReader(System.`in`))) {
     print(if(S==0) ans - 1L else ans)
 }
 
-/*
+/* tncks0121's Kotlinish Solution
 fun main()=with(BufferedReader(InputStreamReader(System.`in`))) {
     val (N, S) = readLine()!!.split(" ").map{ it.toInt() }
     val st = StringTokenizer(readLine()!!)
