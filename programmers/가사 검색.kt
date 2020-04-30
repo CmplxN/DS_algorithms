@@ -1,11 +1,11 @@
-data class Trie(val next:MutableMap<Char,Trie>, var cnt: Int = 0, var fin:Boolean = false) {
+data class Trie(val next:HashMap<Char,Trie>, var cnt: Int = 0, var fin:Boolean = false) {
     fun insert(str: String, idx: Int, end: Int) {
         cnt++
         if (idx == end) {
             fin = true
             return
         }
-        next.computeIfAbsent(str[idx]) { Trie(mutableMapOf()) }
+        next.computeIfAbsent(str[idx]) { Trie(hashMapOf()) }
         next[str[idx]]!!.insert(str, idx + 1, end)
     }
 
@@ -17,8 +17,8 @@ data class Trie(val next:MutableMap<Char,Trie>, var cnt: Int = 0, var fin:Boolea
 }
 class Solution {
     fun solution(words: Array<String>, queries: Array<String>): IntArray {
-        val nTrie = Array(10001) { Trie(mutableMapOf()) }
-        val rTrie = Array(10001) { Trie(mutableMapOf()) }
+        val nTrie = Array(10001) { Trie(hashMapOf()) }
+        val rTrie = Array(10001) { Trie(hashMapOf()) }
         words.forEach {
             nTrie[it.length].insert(it, 0, it.length)
             rTrie[it.length].insert(it.reversed(), 0, it.length)
