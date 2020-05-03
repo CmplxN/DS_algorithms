@@ -1,6 +1,6 @@
 typealias Index = Int
 
-fun <T:Comparable<T>> lower_bound(elements: List<T>, l: Index, r: Index, value: T) : Index {
+fun <T:Comparable<T>> lowerBound(elements: List<T>, l: Index, r: Index, value: T) : Index {
     var left = l
     var right = r
     var mid: Index
@@ -16,7 +16,7 @@ fun <T:Comparable<T>> lower_bound(elements: List<T>, l: Index, r: Index, value: 
     return left
 }
 
-fun <T:Comparable<T>> upper_bound(elements: List<T>, l: Index, r: Index, value: T) : Index {
+fun <T:Comparable<T>> upperBound(elements: List<T>, l: Index, r: Index, value: T) : Index {
     var left = l
     var right = r
     var mid: Index
