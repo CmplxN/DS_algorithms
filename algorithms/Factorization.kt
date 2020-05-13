@@ -67,22 +67,16 @@ fun PollardRho(n: BigInteger):BigInteger {
 }
 
 fun main()=BufferedReader(InputStreamReader(System.`in`)).run {
-
-    var outer = BigInteger(readLine()!!)
-    if(outer == BigInteger.ONE){
+    var number = BigInteger(readLine()!!)
+    if(number == BigInteger.ONE){
         print(1)
         return
     }
-    var inner: BigInteger
     val list = mutableListOf<BigInteger>()
-    while(outer != BigInteger.ONE) {
-        inner = outer
-        while (inner > BigInteger.ONE && !primeTester(inner)) {
-            val result = PollardRho(inner)
-            inner /= result
-        }
-        if(inner > BigInteger.ONE) list.add(inner)
-        outer /= inner
+    while(number > BigInteger.ONE){
+        val rst = PollardRho(number)
+        list.add(rst)
+        number /= rst
     }
     list.sort()
     println(list.joinToString("\n"))
