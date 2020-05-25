@@ -29,7 +29,7 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
         val input = st.nextToken()!!.toInt()
         if (lis.size == 0 || input > lis.last())
             lis.add(input)
-        val idx = lowerBound(lis, 0, lis.size, input)
+        val idx = lowerBound(lis, 0, lis.size - 1, input)
         lis[idx] = input
     }
     print(n - lis.size)
