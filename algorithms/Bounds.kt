@@ -6,8 +6,6 @@ fun <T:Comparable<T>> lowerBound(elements: List<T>, l: Index, r: Index, value: T
     var mid: Index
     while (left < right) {
         mid = (left + right) shr 1
-        if (mid == r)
-            return r
         if (elements[mid] < value)
             left = mid + 1
         else
@@ -22,8 +20,6 @@ fun <T:Comparable<T>> upperBound(elements: List<T>, l: Index, r: Index, value: T
     var mid: Index
     while (left < right) {
         mid = (left + right) shr 1
-        if (mid == r)
-            return r
         if (elements[mid] <= value)
             left = mid + 1
         else
